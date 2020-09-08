@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration page</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+  
+ /* Make form pretty*/
+    form {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-gap: 1em 1em;
+      margin: 0px 250px 50px 100px;
+      font-size: 20px;
+    }
+    label{
+      padding:5px;
+    }
+    input{
+      font-size: 15px;
+    }
+    /* Make a submit button using button tag(most code is from day 8 in class)
+     and submit class styling*/
+    button {
+    display: block;
+    margin: 1em;
+    padding: 2em;
+    border-radius: .5em;
+    border: 1px solid black;
+    
+    cursor: pointer;
+    }
+   .submit{
+      padding:10px;
+      font-size: 20px; 
+    }
+    h1{
+      margin-left: 100px;
+    }
+/*Set up Validation parameters such as green for good and red for bad input*/
+
+ button:active {
+      background-color: darkgreen;
+    }
+    input:hover {
+      background-color:rgb(199, 194, 194);
+    }
+    input:focus {
+      background-color: #ffc0cb;
+    }
+    input:invalid {
+      border: 3px solid red;
+    }
+    input:valid {
+      border: 3px solid rgb(34, 126, 34);
+    }
+    /* add media quary to adjust form to different display sizes*/
+    @media (max-width: 600px){
+      form {
+        display: flex;
+        flex-direction: column;  
+  }}
+  </style>
+</head>
+    <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="#register">Register</a>
+        <a href="contact.html">Contact</a></nav>
+<body>
+  <h1>Registration page
+    <p> 
+      Register with us and share your travel ideas and we will find a perfect package for you
+    </p>
+      <p><font color="red">* indicates required field</font></p>
+  </h1>
+    <form action="#form-submit">
+      <label  for="name">Full Name *</label>
+        <input   type="text" name="name" id="name" placeholder="Enter your full name" required>
+
+      <label for="address">Address *</label>
+        <input type="text" name="name" id="address" placeholder="Enter your address" required>
+
+      <label for="city">City*</label>
+        <input type="text" name="address" id="city" placeholder= "Enter your City" required>
+
+      <label for="province">Province*</label>
+        <input type="text" name="province" id="province" placeholder="Enter your Province" required>
+   
+      <label for="postal">Postal Code *</label>
+        <input type="text" name="postal" id="postal" placeholder="Enter your Postal Code  A0A 0A0" 
+           pattern = "[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required >
+
+       <label  for="email">Email*</label>
+         <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+        <label for="tel">Phone number</label>
+         <input type="phone" name="phone" id="phone" placeholder="Enter your phone number xxx-xxx-xxxx" 
+           pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    
+        <label  for="password">Password*</label>
+          <input type="password" name="password" id="password"
+            placeholder="Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required>
+
+        <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+
+        <button class ="submit" type="submit">SUBMIT</button>
+     </form>
+       <script>
+    /* This portion of the code comes from in class submit and validate exercise
+    
+    Declare a variable named 'form' and assign it to the form element.*/
+
+    const form =document.querySelector('form');
+  
+    //  Using 'element.AddEventListener()' assign the function to the form's 'submit' event
+    form.addEventListener('submit',function(submit){
+
+    /*function validate() */
+      const name = document.querySelector('#name');
+      const address = document.querySelector('address');
+      const city = document.querySelector('#city');
+      const province = document.querySelector('#province');
+      const postal = document.querySelector('#postal');
+      const email = document.querySelector('#email');
+      const password = document.querySelector('#password');
+    
+    })
+      </script> 
+</body> 
+
+</html>

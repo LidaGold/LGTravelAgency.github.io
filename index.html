@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href= "https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Home</title>
+      <style>
+
+  /* Header stores the image for Hero Page*/
+    header{
+        display: flex;
+        height: 85vh;
+        margin: auto;
+         
+  /* Hero imige */
+        background-image: url(https://picsum.photos/id/124/1000/1000);
+        background-repeat:no-repeat;
+        background-size: cover; 
+        background-position: center;        
+    }
+  /* Header styling*/
+    h1{ 
+    font-family: 'Playfair Display', serif;
+    font-size: 60px; 
+    color: honeydew;  
+    }
+   h2{
+    font-size: 40px; 
+    margin: auto; 
+    padding: 20px;
+    background-color: rgba(45, 45, 45, 0.1);
+    text-align: center;
+ } 
+/* Create and style grid for images*/   
+    main{ 
+      width: 90vw;
+      margin:auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap:20px;
+      padding: 20px;    
+      font-size: 20px;    
+    }
+/*Set up gallery*/
+    img{
+      border: 3px solid grey;  
+      size: 50px;
+    }
+    /*Style class for JS portion*/
+    .package {
+    margin: auto;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+
+  <nav class="topnav"> 
+    <a href="#index">Home</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+    <header>
+      <h1>Welcome to Travel Experts</h1> 
+    </header>
+       
+    <h2>Welcome to Our Gallery</h2>
+      <main>
+      
+      </main>
+    <footer>  © 2020 all rights reserved, Travel Corporation </footer>
+      <script>
+      /* Most of the code is from Day 9 in class work adjusted to this project
+      1. Create JS object using array */
+      
+      const packages=[
+          {
+            landscape:  'Mountains',
+            price:      "off season",
+            dates:      "Sep 15 - Nov 15",
+            imgURL: 'https://picsum.photos/id/1016/300/300',
+            url:    'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/escalade-scrambling'
+          },
+          {
+            landscape:  'Waterfall',
+            price:      "off season",
+            dates:      "Sep 15 - Nov 15",
+            imgURL: 'https://picsum.photos/id/1035/300/300',
+            url:      'https://www.pc.gc.ca/en/pn-np/bc/yoho/activ/places'
+          },
+          {
+            landscape:  'Ocean',
+            price:      "off season",
+            dates:      "Apr15 - Nov 15",
+            imgURL:     'https://picsum.photos/id/1051/300/300',
+            url:        'https://www.pc.gc.ca/en/amnc-nmca'
+          },
+          {
+          landscape:  'Animals',
+            price:      "off season",
+            dates:      "Apr15 - Nov 15",
+            imgURL: 'https://picsum.photos/id/1020/300/300',
+            url:      "https://www.pc.gc.ca/en/pn-np/ab/banff/decouvrir-discover/faune-wildlife"
+          }
+        ]
+        /* 2. Create a varible */
+        let content = '';
+        /*3. Assign array to a Autonomous Function*/
+        packages.forEach(function(package){
+        /*4. Loop new variable with different objects and its elements*/
+          content +=  `<article>
+                        <h3 style="text-align:center" class = "packages" >${package.landscape}</h3>
+                        <p>Price: ${package.price}</p>
+                        <p>Dates: ${package.dates}</p>
+                        <img src = "${package.imgURL}">
+                        <a href = "${package.url}">${package.landscape} </a>
+                      </article>`;
+        });
+        /*4. Assign container element to a variable*/
+        const main = document.querySelector('main');
+        /* 5. Make sure DOM understands what to do with new variable using innerHTML*/
+
+        main.innerHTML = content;
+      </script>
+</body>
+</html>
